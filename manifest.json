@@ -1,0 +1,25 @@
+{
+    "name": "Merece Saúde",
+    "short_name": "Merece Saúde",
+    "description": "Área do Cliente Merece Saúde - Plataforma de Saúde Digital e Telemedicina",
+    "background_color": "#0A1128",
+    "theme_color": "#0A1128",
+    "display": "fullscreen",
+    "orientation": "portrait",
+    "start_url": "./index.html",
+    "scope": ".",
+    "icons": [
+        {
+            "src": "https://5928b1d78fbd2630ba4e4b944b2b6eae.cdn.bubble.io/f1755711769220x715877365147272100/ESCUDO%20PNG.png",
+            "sizes": "192x192",
+            "type": "image/png",
+            "purpose": "maskable any"
+        },
+        {
+            "src": "https://5928b1d78fbd2630ba4e4b944b2b6eae.cdn.bubble.io/f1755711769220x715877365147272100/ESCUDO%20PNG.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "maskable any"
+        }
+    ]
+}

@@ -1,0 +1,373 @@
+/* Base variables and reset */
+:root {
+    --primary-teal: #1FB6AB;
+    --primary-green: #A4D96C;
+    --bg-dark: #0A1128;
+    --text-white: #FFFFFF;
+    --text-muted: #9CA3AF;
+    --glass-bg: rgba(255, 255, 255, 0.05);
+    --glass-border: rgba(255, 255, 255, 0.1);
+    --wapp-color: #25D366;
+    --hover-overlay: rgba(255, 255, 255, 0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    -webkit-tap-highlight-color: transparent;
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-white);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Dynamic Animated Background Shapes */
+.bg-shape {
+    position: absolute;
+    filter: blur(100px);
+    z-index: -1;
+    border-radius: 50%;
+    animation: float 15s ease-in-out infinite alternate;
+}
+
+.shape-1 {
+    width: 300px;
+    height: 300px;
+    background: var(--primary-teal);
+    top: -50px;
+    left: -100px;
+    opacity: 0.3;
+}
+
+.shape-2 {
+    width: 250px;
+    height: 250px;
+    background: var(--primary-green);
+    bottom: -100px;
+    right: -50px;
+    opacity: 0.2;
+    animation-delay: -5s;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0) scale(1);
+    }
+
+    100% {
+        transform: translateY(30px) scale(1.1);
+    }
+}
+
+/* Device Mockup Wrapper */
+.device-mockup {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    padding: 1rem;
+}
+
+/* Base Login Container (Mobile first - sleek glass card) */
+.login-container {
+    width: 100%;
+    max-width: 450px;
+    min-height: 85vh;
+    background-color: rgba(10, 17, 40, 0.4);
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 30px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+    padding: 3rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2rem;
+    position: relative;
+    overflow-y: auto;
+}
+
+.login-container::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+}
+
+@media (min-width: 769px) {
+    body {
+        background-color: #050814;
+    }
+
+    .device-mockup {
+        padding: 2rem;
+    }
+
+    .login-container {
+        height: 850px;
+        max-height: 90vh;
+        background-color: var(--bg-dark);
+        border-radius: 40px;
+        border: 14px solid #1a2035;
+        box-shadow:
+            0 25px 50px -12px rgba(0, 0, 0, 0.8),
+            0 0 0 4px #0f1627 inset;
+        padding: 2.5rem 1.5rem;
+        position: relative;
+    }
+
+    /* Simulate iPhone Notch / Dynamic Island */
+    .login-container::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 120px;
+        height: 28px;
+        background-color: #1a2035;
+        border-bottom-left-radius: 18px;
+        border-bottom-right-radius: 18px;
+        z-index: 50;
+    }
+
+    /* Simulate iPhone bottom indicator bar */
+    .login-container::after {
+        content: '';
+        position: absolute;
+        bottom: 15px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 140px;
+        height: 4px;
+        background-color: rgba(255, 255, 255, 0.4);
+        border-radius: 10px;
+        z-index: 50;
+    }
+}
+
+.logo-section {
+    text-align: center;
+    animation: fadeInDown 0.8s ease-out;
+}
+
+.logo-heart {
+    height: 85px;
+    filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.3));
+    animation: heartPulse 2s infinite ease-in-out;
+}
+
+@keyframes heartPulse {
+    0% {
+        transform: scale(1);
+    }
+
+    15% {
+        transform: scale(1.1);
+    }
+
+    30% {
+        transform: scale(1);
+    }
+
+    45% {
+        transform: scale(1.1);
+    }
+
+    60% {
+        transform: scale(1);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Portal Actions Panel */
+.portal-actions {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px);
+    border-radius: 20px;
+    padding: 2.5rem 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    animation: fadeInUp 0.8s ease-out 0.2s both;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.divider {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 0.85rem;
+}
+
+.divider::before,
+.divider::after {
+    content: '';
+    flex: 1;
+    border-bottom: 1px solid var(--glass-border);
+}
+
+.divider span {
+    padding: 0 10px;
+}
+
+/* Primary Button */
+.btn-primary {
+    background: linear-gradient(135deg, var(--primary-teal), var(--primary-green));
+    color: var(--text-white);
+    border: none;
+    padding: 1rem;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    box-shadow: 0 10px 20px -5px rgba(31, 182, 171, 0.4);
+}
+
+.btn-primary:active {
+    transform: scale(0.98);
+}
+
+.btn-primary:hover {
+    box-shadow: 0 15px 25px -5px rgba(31, 182, 171, 0.5);
+    transform: translateY(-2px);
+    color: var(--text-white);
+}
+
+/* Secondary Button (WhatsApp) */
+.btn-secondary {
+    background-color: #25D366;
+    /* Fallback for older browsers like Samsung Internet */
+    background-image: linear-gradient(135deg, #25D366, #128C7E);
+    color: #FFFFFF;
+    border: none;
+    padding: 1rem 1.5rem;
+    border-radius: 12px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    box-shadow: 0 8px 16px -4px #128C7E;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Shimmer Animation Effect */
+.btn-secondary::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(to right, transparent 0%, rgba(255, 255, 255, 0.4) 50%, transparent 100%);
+    transform: skewX(-25deg);
+    animation: shimmer 3s infinite;
+}
+
+@keyframes shimmer {
+    0% {
+        left: -100%;
+    }
+
+    20% {
+        left: 200%;
+    }
+
+    100% {
+        left: 200%;
+    }
+}
+
+.btn-secondary:hover {
+    background-image: linear-gradient(135deg, #1bd15d, #0d796b);
+    color: #FFFFFF;
+    transform: translateY(-3px);
+    box-shadow: 0 12px 24px -6px #128C7E, 0 0 15px rgba(37, 211, 102, 0.6);
+}
+
+.btn-icon {
+    width: 20px;
+    height: 20px;
+    transition: transform 0.3s;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+}
+
+.btn-primary:hover .btn-icon {
+    transform: translateX(4px);
+}
+
+.btn-secondary:hover .btn-icon {
+    transform: scale(1.1) rotate(-5deg);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .login-container {
+        padding: 1.5rem;
+    }
+
+    .portal-actions {
+        padding: 2rem 1.5rem;
+    }
+
+    .logo-section {
+        gap: 1rem !important;
+    }
+
+    .logo-heart {
+        height: 70px;
+    }
+}
