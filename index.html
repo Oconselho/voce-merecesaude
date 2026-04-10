@@ -14,6 +14,37 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="style.css?v=3">
+
+    <style>
+        .scheduling-info {
+            margin-top: 1.5rem;
+            border-radius: 16px;
+            background: rgba(255,255,255,0.06);
+            border: 1px solid rgba(255,255,255,0.12);
+            padding: 1.25rem 1rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+        }
+        .scheduling-info p {
+            margin: 0;
+            color: rgba(255,255,255,0.85);
+            font-size: 0.82rem;
+            text-align: center;
+            line-height: 1.5;
+        }
+        .scheduling-info p strong {
+            color: #4DD9AC;
+        }
+        .scheduling-info img {
+            width: 100%;
+            max-width: 280px;
+            border-radius: 12px;
+            border: 1px solid rgba(77,217,172,0.3);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+        }
+    </style>
 </head>
 
 <body>
@@ -49,18 +80,18 @@
                     Entrar na Área do Cliente
                 </a>
 
-                <div class="divider">
-                    <span>ou</span>
+                <div class="scheduling-info">
+                    <p>
+                        Todo agendamento de consultas deve ser realizado<br>
+                        <strong>dentro da Área do Cliente</strong>, após o login,<br>
+                        utilizando o <strong>botão de chat</strong> disponível na plataforma.
+                    </p>
+                    <img src="https://5928b1d78fbd2630ba4e4b944b2b6eae.cdn.bubble.io/f1755711769220x715877365147272100/ESCUDO%20PNG.png"
+                        alt="Botão de agendamento via chat na Área do Cliente"
+                        id="img-scheduling-guide"
+                        style="display:none;">
                 </div>
 
-                <a href="https://wa.me/5517991099203?text=Ol%C3%A1%2C%20sou%20cliente%20e%20gostaria%20de%20agendar%20uma%20consulta%20com%20um%20especialista!"
-                    target="_blank" rel="noopener" class="btn-secondary">
-                    <svg width="28" height="28" viewBox="0 0 32 32" fill="currentColor" class="btn-icon-wa">
-                        <path
-                            d="M16 2.016C8.288 2.016 2.016 8.288 2.016 16c0 2.656.736 5.152 2.048 7.328L2.016 30l6.816-1.952c2.144 1.184 4.544 1.856 7.168 1.856 7.712 0 13.984-6.272 13.984-13.984S23.712 2.016 16 2.016zM16 27.2c-2.208 0-4.256-.576-6.048-1.568l-.448-.256-4.096 1.152 1.184-4.032-.288-.448C5.216 20.128 4.608 18.112 4.608 16c0-6.272 5.12-11.392 11.392-11.392S27.392 9.728 27.392 16 22.272 27.2 16 27.2zm6.208-8.48c-.352-.16-2.048-1.024-2.368-1.152-.32-.128-.544-.192-.768.16-.256.32-.896 1.152-1.12 1.408-.192.256-.416.288-.768.128-2.016-.928-3.488-2.144-4.832-4.48-.16-.256-.032-.416.128-.576.16-.16.352-.384.512-.608.16-.16.224-.288.32-.48.128-.256.064-.48-.032-.672-.096-.16-.768-1.856-1.056-2.528-.288-.672-.576-.576-.768-.576-.192 0-.416-.032-.64-.032s-.576.096-.864.448c-.32.352-1.184 1.184-1.184 2.88s1.248 3.36 1.408 3.616c.16.256 2.432 3.84 5.952 5.376 3.168 1.408 4.096 1.152 4.864 1.056.8-.096 2.048-.864 2.336-1.696.288-.832.288-1.536.192-1.696-.064-.16-.288-.256-.64-.416z" />
-                    </svg>
-                    Agendar especialista via WhatsApp
-                </a>
             </div>
         </main>
     </div>
